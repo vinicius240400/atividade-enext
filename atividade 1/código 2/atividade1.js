@@ -20,21 +20,21 @@ function cart()
 }
 
 
-    cartItem.prototype.addItem = function(id,name,Product,quantity,price)
+    cart.prototype.addItem = function(id,name,Product,quantity,price)
     {
 
          this.cartItem.push(new cartItem(id,name,Product,quantity,price));
     }
 
-    cartItem.prototype.removeItem = function removeItem(item)
+    cart.prototype.removeItem = function removeItem(item)
     {
         this.cartItem.splice(item,1)
     }
 
-    cartItem.prototype.calculaTotsl =  function calculaTotal()
+    cart.prototype.calculaTotsl =  function calculaTotal()
     {
         var soma = 0
-        cartItem.forEach(function(priceTotal){soma += priceTotal})
+        this.cartItem.forEach(function(priceTotal){soma += priceTotal})
         return soma
     }
 
